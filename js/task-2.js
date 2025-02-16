@@ -1,0 +1,28 @@
+const images = [
+  {
+    url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260',
+    alt: 'White and Black Long Fur Cat',
+  },
+  {
+    url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260',
+    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+  },
+  {
+    url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260',
+    alt: 'Group of Horses Running',
+  },
+];
+
+const gallery = document.querySelector('.gallery');
+images.forEach(image => {
+  console.log('Image', image);
+  const imageItem = document.createElement('li');
+  imageItem.classList.add('gallery-item');
+  const imageTag = document.createElement('img');
+  imageTag.setAttribute('src', image.url);
+  imageTag.setAttribute('alt', image.alt);
+  imageTag.setAttribute('width', '360');
+  imageTag.setAttribute('height', '300');
+  imageItem.appendChild(imageTag);
+  gallery.appendChild(imageItem);
+});
